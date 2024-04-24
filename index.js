@@ -76,11 +76,6 @@ app.get("/secrets", async (req, res) => {
   
 });
 
-//TODO: Add a get route for the submit button
-//Think about how the logic should work with authentication.
-
-//create a post routhe to handle and submit the data to db
-
 app.get("/submit", (req, res) => {
   if(req.isAuthenticated()){
     res.render("submit.ejs");
@@ -146,8 +141,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-//TODO: Create the post route for submit.
-//Handle the submitted data and add it to the database
 app.post('/submit', async (req, res) => {
   const submittedsecret = req.body.secret;
   console.log(req.user)
